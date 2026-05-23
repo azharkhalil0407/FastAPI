@@ -1,0 +1,1 @@
+# FastAPI Learning - Day 1: CRUD API with in-memory storage
