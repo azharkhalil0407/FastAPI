@@ -6,4 +6,4 @@ Covers routing, path and query parameters, request validation, HTTP status codes
 
 ## Day 2 - Database integration with SQLAlchemy
 Connected FastAPI to a persistent SQLite database using SQLAlchemy.
-Covers engine setup, session management, dependency injection, Pydantic vs SQLAlchemy models and full CRUD with real data persistence.
+Covers engine setup, session management, dependency injection, Pydantic vs SQLalchemy models and full CRUD with real data persistence.
