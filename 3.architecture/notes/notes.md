@@ -2,6 +2,19 @@
 
 ---
 
+## Key Concepts
+
+- Environment variables keep secrets out of source code
+- Pydantic settings validate config at startup, not at runtime failure
+- `.gitignore` prevents `.env` and database files from reaching GitHub
+- Single Responsibility Principle - each file does one thing only
+- Routers handle HTTP. CRUD handles the database. Never mix them.
+- `APIRouter` groups related routes and auto-prefixes all paths
+- `ProductResponse` schema controls exactly what gets sent to the client
+- Alembic is how you manage schema changes safely in production
+
+---
+
 ## Environment Variables and .env Files
 
 ### The Problem
@@ -360,7 +373,7 @@ pip3 install -r requirements.txt
 
 ---
 
-## Summary - What You Built on Day 3
+## Summary 
 
 | File | Type | What It Does |
 |---|---|---|
@@ -377,13 +390,19 @@ pip3 install -r requirements.txt
 
 ---
 
-## Key Concepts from Day 3
+## What Was Built:
 
-- Environment variables keep secrets out of source code
-- Pydantic settings validate config at startup, not at runtime failure
-- `.gitignore` prevents `.env` and database files from reaching GitHub
-- Single Responsibility Principle - each file does one thing only
-- Routers handle HTTP. CRUD handles the database. Never mix them.
-- `APIRouter` groups related routes and auto-prefixes all paths
-- `ProductResponse` schema controls exactly what gets sent to the client
-- Alembic is how you manage schema changes safely in production
+- `config.py` with Pydantic settings validating all env variables at startup
+- `.env` file storing `DATABASE_URL` and `SECRET_KEY` locally
+- `.gitignore` preventing secrets and cache files from reaching GitHub
+- Full production-grade folder structure with `models/`, `schemas/`, `routers/`, and `crud/`
+- Pydantic schemas for `ProductCreate`, `ProductUpdate`, and `ProductResponse`
+- Complete CRUD layer with `get_all`, `get_by_id`, `create`, `update`, and `delete` functions
+- Router layer using `APIRouter` with `/products` prefix and Swagger tags
+- Dependency injection with `get_db()` using `Depends`
+- Clean `main.py` that only creates the app and registers the router
+- `requirements.txt` generated from the current environment
+- Alembic initialized and migration commands understood
+
+---
+
