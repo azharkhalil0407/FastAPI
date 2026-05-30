@@ -1,4 +1,4 @@
-# Day 2 - SQLAlchemy + Database Integration
+# SQLAlchemy + Database Integration
 
 ## How the Architecture Changed
 
@@ -254,7 +254,7 @@ def delete_product(product_id: int, db: Session = Depends(get_db)):
 
 ---
 
-## What Was Built on Day 2
+## What Was Built
 
 - Set up a SQLite database connection using SQLAlchemy
 - Defined a `Product` table as a Python class in `models.py`
