@@ -1,4 +1,4 @@
-# Day 1 - APIs and FastAPI Basics
+# APIs and FastAPI Basics
 
 ## What is an API and FastAPI?
 
@@ -115,7 +115,7 @@ products = {}  # Dictionary used as in-memory storage
 
 ---
 
-## What Was Built on Day 1
+## What Was Built
 
 - Root route returning name and age as JSON
 - GET with path parameter `/items/{item_id}`
