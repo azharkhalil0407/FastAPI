@@ -1,10 +1,10 @@
-from sqlalchemy import Column, Integer, String, Boolean
 from app.database import Base
+from sqlalchemy import Column, Integer, String, Boolean, Float
+
 
 class Product(Base):
     __tablename__ = "products"
-
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String)
-    price = Column(Integer)
+    name = Column(String, nullable=False)
+    price = Column(Float, nullable=False)
     in_stock = Column(Boolean, default=True)
