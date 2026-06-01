@@ -196,24 +196,6 @@ def get_me(current_user = Depends(get_current_user)):
 
 ---
 
-## Memory Trick — REGVT → GETU
-
-**Login (5 steps):**
-1. **R**equest (form data)
-2. **E**xists (check DB)
-3. **G**o verify (password check)
-4. **V**erify passed → create token with `{"sub": email}`
-5. **T**oken returned
-
-**Protected Request (5 steps):**
-1. **G**et request with `Authorization: Bearer`
-2. **E**xtract token (`OAuth2PasswordBearer`)
-3. **T**oken verify (`jwt.decode`)
-4. **U**ser email (`payload.get("sub")`)
-5. User returned
-
----
-
 ## Project File Structure 
 
 ```
