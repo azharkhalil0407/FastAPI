@@ -16,6 +16,6 @@ Covers environment variables with `.env`, Pydantic settings validation at startu
 Built a full user registration flow with secure password hashing using bcrypt via passlib.
 Covers why plain text storage is dangerous, how bcrypt works, `utils.py` with hash and verify functions, User SQLAlchemy model, separate `UserCreate` and `UserResponse` Pydantic schemas, CRUD layer for users, and a `POST /users/register` endpoint that validates input, checks for duplicate emails, hashes the password, and returns a safe response.
 
-## JWT Authentication and protected routes
+## JWT Authentication and protected route
 Built a stateless authentication system using JSON Web Tokens (JWT).
 Covers how JWT solves HTTP statelessness, token structure (header, payload, signature), signing and verifying tokens with a `SECRET_KEY`, token expiry, `OAuth2PasswordRequestForm` for parsing login form data, `OAuth2PasswordBearer` for extracting tokens from the `Authorization` header, `create_access_token` and `get_current_user` utilities, a `POST /users/login` endpoint, and a protected `GET /users/me` endpoint using `Depends`. Also covers circular import resolution by isolating `get_db` into `dependencies.py`.
