@@ -19,3 +19,11 @@ Covers why plain text storage is dangerous, how bcrypt works, `utils.py` with ha
 ## JWT Authentication and protected routes
 Built a stateless authentication system using JSON Web Tokens (JWT).
 Covers how JWT solves HTTP statelessness, token structure (header, payload, signature), signing and verifying tokens with a `SECRET_KEY`, token expiry, `OAuth2PasswordRequestForm` for parsing login form data, `OAuth2PasswordBearer` for extracting tokens from the `Authorization` header, `create_access_token` and `get_current_user` utilities, a `POST /users/login` endpoint, and a protected `GET /users/me` endpoint using `Depends`. Also covers circular import resolution by isolating `get_db` into `dependencies.py`.
+
+## SQLite to PostgreSQL migration
+Migrated the database layer from SQLite to PostgreSQL for production-readiness.
+Covers why SQLite breaks under FastAPI's multi-threading, installing and running PostgreSQL locally, `psql` basics, Python's `psycopg2` adapter, updating the `DATABASE_URL` and engine config, and forcing table creation by explicitly importing all models at startup.
+
+## Foreign keys and relationships
+Introduced relational integrity between the `users` and `products` tables using PostgreSQL-enforced foreign keys.
+Covers dangling reference problems, `ondelete` behavior (`RESTRICT`, `CASCADE`, `SET NULL`), correct `ForeignKey` syntax referencing table names not class names, `relationship()` as a Python-only navigation shortcut, `back_populates` for two-way in-memory sync, `create_all` limitations and the development workaround using `DROP TABLE ... CASCADE`, and resolving circular imports with `from __future__ import annotations`.
