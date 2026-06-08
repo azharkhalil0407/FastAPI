@@ -12,3 +12,4 @@ def create_user(user: UserCreate, db: Session):
     db.commit()
     db.refresh(new_user)
     return new_user
+
