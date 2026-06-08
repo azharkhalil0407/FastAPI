@@ -27,3 +27,7 @@ Covers why SQLite breaks under FastAPI's multi-threading, installing and running
 ## Foreign keys and relationships
 Introduced relational integrity between the `users` and `products` tables using PostgreSQL-enforced foreign keys.
 Covers dangling reference problems, `ondelete` behavior (`RESTRICT`, `CASCADE`, `SET NULL`), correct `ForeignKey` syntax referencing table names not class names, `relationship()` as a Python-only navigation shortcut, `back_populates` for two-way in-memory sync, `create_all` limitations and the development workaround using `DROP TABLE ... CASCADE`, and resolving circular imports with `from __future__ import annotations`.
+
+## Relationships extended, query patterns, and error handling
+Extended the relational layer with user-scoped queries, eager loading, and production-grade error handling.
+Covers the N+1 problem and fixing it with `joinedload()`, `joinedload` vs `selectinload`, user-scoped `GET /products/` using the authenticated user's id, `IntegrityError` handling with `db.rollback()` and `raise` in the CRUD layer, global exception handlers in `main.py` for consistent error response shapes across `RequestValidationError` and `HTTPException`, Pydantic `Field` validators (`gt`, `ge`, `min_length`, `pattern`), the security fix of removing `user_id` from the request schema and pulling it from the JWT token instead, and the architectural difference between `HTTPException` and custom domain exceptions.
